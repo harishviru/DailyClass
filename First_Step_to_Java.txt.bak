@@ -1,0 +1,143 @@
+
+Syntaxes  : 
+-========
+Variable :               To store state of data/Object
+*********
+
+
+<AccessModifier> <dataType> <VariableName>=<Value>;
+
+Here allowed dataType are primitive ,non-primitive 
+ 
+ ex :  int x =60;                    
+ 
+ 60 -> Integral value 
+ x  -> Variable Name or identifier
+ int -> dataType
+        -> default (Access Modifier)      [Here compiler will provide 'default' ]
+
+Note : AccessModifier : 0 OR n number legal access Modifier allowed
+
+int x =60;                     ->Compiler generated code -->default int x =60;
+ 
+
+
+method :   To perform some action/Task.
+********
+
+<AccessModifier>   <returnType>    <MethodName>(<ArgumentList/Params>){
+           [0]                            [1]                                 [2]                            [3]                                     }                                                                                                                   
+
+
+ex :
+public static void main(String[] args) {
+
+}
+
+AccessModifier                           : public static                [0 OR n of access Modifers allowed]
+returnType                                   :  void                               [ void,primitive,or non-primitive (only one is allowed)]
+MethodName                               :main                              [ name of Method (Which is valid identifier)]
+ArgumentList/Params            :String[]                        [ Here params : primitive,or non-primitive (only n number is allowed)]
+{ }                                                       : methodBody               
+
+Note ::
+If we are providing then compiler will generte/add 'default' access Modifier.
+
+
+
+Class ::
+*******
+
+<AccessModifier>  class   <className> {
+                                                                               }
+
+
+ex :            class Test{
+                                      }
+
+Here  
+          AccessModifier              : default                 [ Allowed access Modifier -> 0 OR n number]      
+      class reserved Keyword  :class 
+       className                            : Test             
+         { }                                            : class body        
+
+
+
+
+**************************************************************************************************
+
+class Test{
+      // Here allowed member : class Members
+}
+
+class Members :    variables ,methods , labeles ,classes..etc
+
+ex :
+**
+class Test{
+   
+      //Here allowed members           : variables,methods,labels ,class 
+
+    public static void main(String[] args) {
+                                              //Here allowed members       : variables ,labels ,class 
+    }  
+}
+
+Full example ::
+****************
+public class Test {
+
+	int x1=0;      //Variables
+	
+	//Methods
+	void m1() {
+		             int d=30;          //variables
+	         	      class Inner{      // inner class
+		             }
+		}//m1
+	
+	
+	
+	class IClass{      //Inner class
+		
+	}
+	
+}//class
+
+
+Arrays ::
+******
+
+Synytax :     	
+
+     <DataType>  []   <VariableName>  = new <DataType>[sizeVal];
+        [0]                                      [1]                     [2]           [3]                [4]
+
+	 int []   numArray = new int[5];
+
+       Here   
+            [0] :        int                                  - DataType 
+            [1] :         numArray                  -VariableName
+            [2]:         new                               - new object creation
+           [3] :          int                                 -DataType
+	   [4]:         [5]                                    - array size 
+      
+
+Here sizeVal           : allowed dataType are byte,short,char,int
+               
+[5]                                : 5 is int type of value 
+
+
+
+int []   numArray;             //declaration
+
+numArray = new int[5];    // construction
+
+              OR 
+
+int []   numArray = new int[5];          //declaration + construction
+numArray[0] =90;                                  // initialization
+numArray[1] =190;    
+numArray[2] =290;    
+numArray[3] =390;    
+numArray[4] =490;    

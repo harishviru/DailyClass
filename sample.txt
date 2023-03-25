@@ -1,0 +1,33 @@
+                                                                                         enum:
+                                                                                          =====
+
+
+ enum Month  implements X, Y{
+     JAN,FEB,MAR;
+
+ }
+
+ enum Z extends java.lang.Enum{
+
+ }
+enum A extends java.lang.Enum{
+
+ }
+
+
+
+0)enum is used to define group of name constants      ( JAN,FEB,MAR)
+ 1)The enum is implicity final               (Then we can't able to create child class)
+ 2)The enum class is directly child to java.lang.Enum (abstract class) [enum we not support inheritance concept in class level)
+ 3) Here we can implements any no of interfaces.
+ 4)As "enum" introduced in 1.5version , i.e . From 1.5V onwards
+    switch(x){
+
+    }
+    Here  x (argument type ) we support   Byte,Short,Integer,Character,enum
+    Before 1.5 V  x (argument type ) support only byte,short,int,char
+5) The allowed access modifier   are as follows
+
+           enum OUTER{
+                     enum INNER{
+	
