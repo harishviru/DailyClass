@@ -1,0 +1,53 @@
+                                                                                         enum:
+                                                                                          =====
+
+
+ enum Month  implements X, Y{
+     JAN,FEB,MAR;
+
+ }
+
+ enum Z extends java.lang.Enum{
+
+ }
+enum A extends java.lang.Enum{
+
+ }
+
+
+
+0)enum is used to define group of name constants      ( JAN,FEB,MAR)
+ 1)The enum is implicity final               (Then we can't able to create child class)
+ 2)The enum class is directly child to java.lang.Enum (abstract class) [enum we not support inheritance concept in class level)
+ 3) Here we can implements any no of interfaces.
+ 4)As "enum" introduced in 1.5version , i.e . From 1.5V onwards
+    switch(x){
+
+    }
+    Here  x (argument type ) we support   Byte,Short,Integer,Character,enum
+    Before 1.5 V  x (argument type ) support only byte,short,int,char
+5) The allowed access modifier   are as follows
+
+           enum OUTER{
+                     enum INNER{
+		     }
+	   }
+
+For Outer enum allowed access Modifiers are  public,default,strictfp.
+        Inner enum allowed access Modifers are public,default,strictfp  + private ,protected,static.
+
+6)The contants defined in the enum will be always public static final .
+   enum Month  {
+     JAN,                              == public static final Month JAN =new Month();
+     FEB,                             == public static final Month FEB =new Month();
+     MAR;                           == public static final Month MAR =new Month();
+ }
+7) When we print  enum constant internally  toString() will executed .
+8)Compiler will generates these  methods in our own enum 
+                              a) public static final Month[] values();      // To get all name constants
+			      b)public final Month valueOf(String name);  // To get particular enum object
+                                                             
+9)Compiler will generate super(enumConstant ,ordinal)  in our enum class constructor to
+   invoke predefined java.lang.Enum constructor .(becoz To maintain constantName and it ordinal number)
+
+
