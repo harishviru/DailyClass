@@ -23,6 +23,35 @@ public class CollectionExample {
 
 		// iterator();
 
+		//listIterator();
+		
+		List l = new ArrayList<>();
+
+		for (int i = 65; i < 123; i++) {
+			l.add((char) i);
+		}
+		System.out.println("++++++++++++++++++++++++++++");
+
+
+		Iterator itr = l.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next() + " ");
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+	private static void listIterator() {
 		List<Character> l = new ArrayList<>();
 
 		for (int i = 65; i < 123; i++) {
@@ -42,17 +71,6 @@ public class CollectionExample {
 			for(Character c    :       l) {
 				System.out.println(c);
 			}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 
 	private static void iterator() {
