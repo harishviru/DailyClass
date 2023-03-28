@@ -1,50 +1,142 @@
 package com.har.collection;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.WeakHashMap;
 
-class Temp{
+class Temp {
 	
+}
+
+class Temp1{
+	int i;
+	public Temp1(int i) {
+		this.i=i;
+	}
+	@Override
+	public int hashCode() {
+		return i;
+	}
+	
+	@Override
+	public String toString() {
+		return " "+i;
+	}
 }
 
 public class CollectionExampleFour {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		// hashMap_LinkedHashMap();
 		// treeMap();
 		// IdentityHashMap();
-		//identityHashMap();
+		// identityHashMap();
+
+		// hashMapVsWeakHashMap();
+		// weakHashMap();
+
+		// hashtbale_1();
+
+		//hashtable_2();
 		
-		//hashMapVsWeakHashMap();
-		
-		WeakHashMap map = new WeakHashMap();
-		Temp temp =new Temp();
-		map.put(temp, 101);
-		System.out.println(map);
-		temp =null;
-		 System.gc();
-		System.out.println(map);
+		//hashtable_3();
+
+   // properties();
 
 		
+		
+	}
+
+	private static void properties() throws FileNotFoundException, IOException {
+		FileInputStream fis =new FileInputStream("db.properties");
+			
+			
+			Properties  props =new Properties();
+			System.out.println(props);
+			props.load(fis);
+			
+			System.out.println(props);
+			
+			FileOutputStream fos =new FileOutputStream("dbOut.properties");
+			
+			props.store(fos, "Added by DB");
+			
+			System.out.println(props);
+	}
+
+	private static void hashtable_3() {
+		Hashtable ht = new Hashtable<>();
+		Temp1   t1 =new Temp1(5);
+		ht.put(t1, "Five");
+		ht.put(new Temp1(2), "Two");
+		ht.put(new Temp1(6), "six");
+		ht.put(new Temp1(15), "fiveteen");
+		ht.put(new Temp1(23), "twentyThree");
+		ht.put(new Temp1(16), "sixteen");
+		
+		//{ 6=six,  16=sixteen,  5=Five,  15=fiveteen,  2=Two,  23=twentyThree}
+
+		System.out.println(ht);
+		
+		System.out.println(ht.get(t1));
+		
+		System.out.println(ht);
+	}
+
+	private static void hashtable_2() {
+		Hashtable ht = new Hashtable<>();
+		ht.put("vishal", 10);
+		ht.put("sachin", 30);
+		ht.put("vaibhav", 20);
+		
+		System.out.println(ht);
+	}
+
+	private static void hashtbale_1() {
+		Hashtable ht = new Hashtable<>();
+		// ht.put(null, "K");
+		// ht.put("K",null) ; NullpointerExpection
+		ht.put("A", "Arjun");
+		ht.put("B", "Bramhi");
+		ht.put("C", "Cool");
+		ht.put("D", "Doll");
+
+		System.out.println(ht);
+	}
+
+	private static void weakHashMap() {
+		WeakHashMap map = new WeakHashMap();
+		Temp temp = new Temp();
+		map.put(temp, 101);
+		System.out.println(map);
+		temp = null;
+		System.gc();
+		System.out.println(map);
 	}
 
 	private static void hashMapVsWeakHashMap() {
 		HashMap map = new HashMap();
-		Temp temp =new Temp();
-		
+		Temp temp = new Temp();
+
 		map.put(temp, 101);
 		System.out.println(map);
-		temp =null;
-		 System.gc();
+		temp = null;
+		System.gc();
 		System.out.println(map);
 	}
 
@@ -52,32 +144,31 @@ public class CollectionExampleFour {
 		HashMap map = new HashMap();
 		String s = new String("C");
 		String s1 = new String("C");
-		
+
 		System.out.println(s.equals(s1));
-		System.out.println(s==s1);
+		System.out.println(s == s1);
 		map.put(s, "Laxman");
 		map.put(s1, "Chandu");
-		//System.out.println(map);
+		// System.out.println(map);
 
 		IdentityHashMap ihm = new IdentityHashMap<>();
 		ihm.put(s, "Laxman");
 		ihm.put(s1, "Chandu");
-	   // System.out.println(ihm);
-	    
-	    
-	    IdentityHashMap ihm2 = new IdentityHashMap<>();
-	    String      t1     ="C";
-	    String      t2    ="C";
-	    ihm2.put(t1, "Laxman");
-	    ihm2.put(t2, "Chandu");
-	    //System.out.println(ihm2);
-	    
-	    IdentityHashMap ihm3 = new IdentityHashMap<>();
-	    String      m1     =new String("Y");
-	    String      m2         =new String("Y");
-	    ihm3.put(m1, "Laxman");
-	    ihm3.put(m2, "Chandu");
-	    System.out.println(ihm3);
+		// System.out.println(ihm);
+
+		IdentityHashMap ihm2 = new IdentityHashMap<>();
+		String t1 = "C";
+		String t2 = "C";
+		ihm2.put(t1, "Laxman");
+		ihm2.put(t2, "Chandu");
+		// System.out.println(ihm2);
+
+		IdentityHashMap ihm3 = new IdentityHashMap<>();
+		String m1 = new String("Y");
+		String m2 = new String("Y");
+		ihm3.put(m1, "Laxman");
+		ihm3.put(m2, "Chandu");
+		System.out.println(ihm3);
 	}
 
 	private static void IdentityHashMap() {
