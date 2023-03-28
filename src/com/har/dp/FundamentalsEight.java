@@ -5,8 +5,10 @@ public class FundamentalsEight {
 	public static void main(String[] args) {
 
 		int[] a = new int[4];
+		System.out.println(a.getClass());
 
 		byte b = 20;
+
 		short s = 30;
 		char c = 'a';
 		int f = 390;
