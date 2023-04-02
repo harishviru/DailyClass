@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/SQL_BASICS.sql</name>
+			<type>1</type>
+			<location>D:/Documents/PDF&apos;s/BASIC_SYNTAXS.sql</location>
+		</link>
+	</linkedResources>
 </projectDescription>
