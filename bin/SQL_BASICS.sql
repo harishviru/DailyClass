@@ -1,7 +1,7 @@
 --- For Reference   :: https://livesql.oracle.com/apex/livesql/file/content_O5AEB2HE08PYEPTGCFLZU9YCV.html
 
 --- SQL SELECT Statement:
-
+ 
   ---#01 : For getting all specfic column
 
       SELECT COLUMN1,COLUMN2,COLUMN3,......,COLUMNn FROM [table_name];
